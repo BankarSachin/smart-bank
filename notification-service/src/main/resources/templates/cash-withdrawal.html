@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Debit Card Withdrawal Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details th {
+            text-align: left;
+            padding-right: 15px;
+        }
+        .details td {
+            padding-bottom: 10px;
+        }
+        .link {
+            margin-top: 20px;
+        }
+        .link a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Dear Customer,</h2>
+        <p>
+            Thank you for visiting SmartBank.A cash withdrawal of Rs.<span th:text="${txnAmount}"></span> completed on <span th:text="${txnDateTime}"></span>.
+        </p>
+        <p>
+            Account <span th:text="${accountNumber}"></span> has been debited for the same.
+        </p>
+        <div class="details">
+            <p>Available Balance: Rs.<span th:text="${closingBalance}"></span></p>
+            <p>The transaction reference No is: <span th:text="${utrNumber}"></span></p>
+        </div>
+        <div class="link">
+            <p>To raise a dispute for a transaction or report a fraud, please <a th:href="@{https://www.npci.org.in/register-a-complaint}">Click here</a></p>
+        </div>
+        <p>Regards,<br/>SmartBank</p>
+        <div class="footer">
+			<i>
+            	<p>This is an automatically generated email, please do not reply to this email.</p>
+			</i>
+        </div>        
+    </div>
+</body>
+</html>
