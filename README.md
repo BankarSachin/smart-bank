@@ -17,6 +17,8 @@ This microservices based application is designed to perfrom below things
 
 
 # Architecture
+![image](https://github.com/user-attachments/assets/77ab5d76-c8ec-433c-bc0e-405568bc563a)
+
 - Gateway Design pattern and Service Discovery Pattern used
 - Gateway automatically Load Balance traffic and routes with help of Service Registry
 
